@@ -1,0 +1,106 @@
+{
+    "name": "sfPot grav",
+    "type": "project",
+    "description": "Modern, Crazy Fast, Ridiculously Easy and Amazingly Powerful Flat-File CMS",
+    "keywords": ["cms","flat-file cms","flat cms","flatfile cms","php"],
+    "homepage": "http://getgrav.org",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "": "symfony/src/",
+            "Grav\\": "grav/system/src/Grav"
+        },
+        "files": ["grav/system/defines.php"],
+        "classmap": [
+            "symfony/app/AppKernel.php",
+            "symfony/app/AppCache.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "symfony/tests/"
+        }
+    },
+    "require": {
+
+        "php": ">=5.5.9",
+        "symfony/symfony": "3.1.*",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "symfony/swiftmailer-bundle": "^2.3",
+        "symfony/monolog-bundle": "^2.8",
+        "symfony/polyfill-apcu": "^1.0",
+        "sensio/distribution-bundle": "^5.0",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "incenteev/composer-parameter-handler": "^2.0",
+        "twig/twig": "~1.24",
+
+        "erusev/parsedown": "dev-master as 1.6.0",
+        "erusev/parsedown-extra": "~0.7",
+        "symfony/yaml": "~2.8",
+        "symfony/console": "~2.8",
+        "symfony/event-dispatcher": "~2.8",
+        "symfony/var-dumper": "~2.8",
+        "symfony/polyfill-iconv": "~1.0",
+        "doctrine/cache": "~1.5",
+        "filp/whoops": "~2.0",
+        "matthiasmullie/minify": "^1.3",
+        "monolog/monolog": "~1.0",
+        "gregwar/image": "~2.0",
+        "donatj/phpuseragentparser": "~0.3",
+        "pimple/pimple": "~3.0",
+        "rockettheme/toolbox": "~1.0",
+        "maximebf/debugbar": "~1.10",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-curl": "*",
+        "ext-zip": "*",
+        "league/climate": "^3.2",
+        "antoligy/dom-string-iterators": "^1.0"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.1",
+        "phpunit/php-code-coverage": "~2.0",
+        "fzaninotto/faker": "^1.5",
+
+        "sensio/generator-bundle": "^3.0",
+        "symfony/phpunit-bridge": "^3.0"
+    },
+    "archive": {
+        "exclude": ["VERSION"]
+    },
+    "scripts": {
+        "post-create-project-cmd": "grav/bin/grav install",
+        "test": "vendor/bin/codecept run unit",
+        "test-windows": "vendor\\bin\\codecept run unit",
+        "symfony-scripts": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
+        ]
+    },
+    "extra": {
+        "symfony-app-dir": "symfony/app",
+        "symfony-bin-dir": "symfony/bin",
+        "symfony-var-dir": "symfony/var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "symfony/tests",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "symfony/app/config/parameters.yml"
+        },
+        "branch-alias": {
+            "dev-develop": "1.x-dev"
+        }
+    }
+}

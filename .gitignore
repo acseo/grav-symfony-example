@@ -1,0 +1,67 @@
+#/symfony gitignore
+
+/symfony/app/config/parameters.yml
+/symfony/build/
+/symfony/phpunit.xml
+/symfony/var/*
+!/symfony/var/cache
+/symfony/var/cache/*
+!/symfony/var/cache/.gitkeep
+!/symfony/var/logs
+/symfony/var/logs/*
+!/symfony/var/logs/.gitkeep
+!/symfony/var/sessions
+/symfony/var/sessions/*
+!/symfony/var/sessions/.gitkeep
+!/symfony/var//symfonyRequirements.php
+/symfony/web/bundles/
+
+
+# Composer
+.composer
+vendor/*
+!*/vendor/*
+
+# Sass
+.sass-cache
+
+# /grav Specific
+/grav/backup/*
+/grav/!backup/.*
+/grav/cache/*
+/grav/!cache/.*
+/grav/assets/*
+/grav/!assets/.*
+/grav/logs/*
+/grav/!logs/.*
+/grav/images/*
+/grav/!images/.*
+/grav/user/accounts/*
+/grav/!user/accounts/.*
+/grav/user/data/*
+/grav/!user/data/.*
+/grav/user/plugins/*
+/grav/!user/plugins/.*
+/grav/user/themes/*
+/grav/!user/themes/.*
+/grav/user/localhost/config/security.yaml
+
+# OS Generated
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+# phpstorm
+.idea/*
+/grav/user/config/security.yaml
+
+/grav/tests/_output/*
+/grav/tests/_support/_generated/*
+/grav/tests/cache/*
+/grav/tests/error.log
+
+
+!/web/cache
+/web/cache/*
